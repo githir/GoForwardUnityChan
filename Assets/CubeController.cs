@@ -1,14 +1,14 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CubeController : MonoBehaviour
 {
 
-    // ƒLƒ…[ƒu‚ÌˆÚ“®‘¬“x
+    // ã‚­ãƒ¥ãƒ¼ãƒ–ã®ç§»å‹•é€Ÿåº¦
     private float speed = -12;
 
-    // Á–ÅˆÊ’u
+    // æ¶ˆæ»…ä½ç½®
     private float deadLine = -10;
 
     // Use this for initialization
@@ -20,13 +20,23 @@ public class CubeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // ƒLƒ…[ƒu‚ğˆÚ“®‚³‚¹‚é
+        // ã‚­ãƒ¥ãƒ¼ãƒ–ã‚’ç§»å‹•ã•ã›ã‚‹
         transform.Translate(this.speed * Time.deltaTime, 0, 0);
 
-        // ‰æ–ÊŠO‚Éo‚½‚ç”jŠü‚·‚é
+        // ç”»é¢å¤–ã«å‡ºãŸã‚‰ç ´æ£„ã™ã‚‹
         if (transform.position.x < this.deadLine)
         {
             Destroy(gameObject);
         }
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("collision" + collision.gameObject.name + "," +collision.gameObject.tag);
+        if( collision.gameObject.tag != "Player")
+        {
+            GetComponent<AudioSource>().Play();
+        }
+    }
+
 }
