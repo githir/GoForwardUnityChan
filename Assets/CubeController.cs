@@ -32,7 +32,7 @@ public class CubeController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collision" + collision.gameObject.name + "," +collision.gameObject.tag);
+        // Debug.Log("collision" + collision.gameObject.name + "," +collision.gameObject.tag);
         if( collision.gameObject.tag != "Player")
         {
             GetComponent<AudioSource>().Play();
