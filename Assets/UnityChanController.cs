@@ -44,7 +44,7 @@ public class UnityChanController : MonoBehaviour
         bool isGround = (transform.position.y > this.groundLevel) ? false : true;
         this.animator.SetBool("isGround", isGround);
 
-        // ジャンプ状態のときにはボリュームを0にする（追加）
+        // ジャンプ状態のときにはボリュームを0にする
         GetComponent<AudioSource>().volume = (isGround) ? 1 : 0;
 
         // 着地状態でクリックされた場合
@@ -66,10 +66,10 @@ public class UnityChanController : MonoBehaviour
         // デッドラインを超えた場合ゲームオーバーにする（追加）
         if (transform.position.x < this.deadLine)
         {
-            // UIControllerのGameOver関数を呼び出して画面上に「GameOver」と表示する（追加）
+            // UIControllerのGameOver関数を呼び出して画面上に「GameOver」と表示する
             GameObject.Find("Canvas").GetComponent<UIController>().GameOver();
 
-            // ユニティちゃんを破棄する（追加）
+            // ユニティちゃんを破棄する
             Destroy(gameObject);
         }
     }

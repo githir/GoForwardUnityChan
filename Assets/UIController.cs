@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; //（追加）
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -42,10 +42,10 @@ public class UIController : MonoBehaviour
             this.runLengthText.GetComponent<Text>().text = "Distance:  " + len.ToString("F2") + "m";
         }
 
-        // ゲームオーバーになった場合（追加）
+        // ゲームオーバーになった場合
         if (this.isGameOver == true)
         {
-            // クリックされたらシーンをロードする（追加）
+            // クリックされたらシーンをロードする
             if (Input.GetMouseButtonDown(0))
             {
                 //SampleSceneを読み込む（追加）
