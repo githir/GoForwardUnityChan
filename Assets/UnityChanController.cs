@@ -19,7 +19,7 @@ public class UnityChanController : MonoBehaviour
     // ジャンプの速度
     float jumpVelocity = 20;
 
-    // ゲームオーバーになる位置（追加）
+    // ゲームオーバーになる位置
     private float deadLine = -9;
 
 
@@ -63,7 +63,7 @@ public class UnityChanController : MonoBehaviour
             }
         }
 
-        // デッドラインを超えた場合ゲームオーバーにする（追加）
+        // デッドラインを超えた場合ゲームオーバーにする
         if (transform.position.x < this.deadLine)
         {
             // UIControllerのGameOver関数を呼び出して画面上に「GameOver」と表示する

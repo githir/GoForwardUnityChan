@@ -48,7 +48,7 @@ public class UIController : MonoBehaviour
             // クリックされたらシーンをロードする
             if (Input.GetMouseButtonDown(0))
             {
-                //SampleSceneを読み込む（追加）
+                //SampleSceneを読み込む
                 SceneManager.LoadScene("SampleScene");
             }
         }
